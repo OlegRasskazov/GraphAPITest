@@ -41,8 +41,7 @@ namespace GraphAPIService
                 .Build();
             string[] scopes = new string[] { $"{config.ApiUrl}.default" };
 
-            AuthenticationResult result = null;
-            result = await app.AcquireTokenForClient(scopes)
+            var result = await app.AcquireTokenForClient(scopes)
                 .ExecuteAsync();
             return result;
         }

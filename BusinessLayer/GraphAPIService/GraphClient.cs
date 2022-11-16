@@ -1,6 +1,4 @@
 ﻿using Microsoft.Graph;
-using Microsoft.Identity.Client;
-using System.IO;
 
 namespace GraphAPIService
 {

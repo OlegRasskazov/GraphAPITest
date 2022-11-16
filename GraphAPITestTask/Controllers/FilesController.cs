@@ -20,11 +20,22 @@ namespace GraphAPITestTask.Controllers
             this.db = db ?? throw new ArgumentNullException(nameof(db));
         }
 
+        /// <summary>Gets the files asynchronous.</summary>
+        /// <param name="driveId">The drive identifier.</param>
+        /// <param name="token">The token.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         [HttpGet("{driveId}")]
         public async Task<IActionResult> GetFilesAsync(Guid driveId, CancellationToken token)
             => Ok(await graphClient.GetFilesAsync(driveId, token));
 
 
+        /// <summary>Downloads the file asynchronous.</summary>
+        /// <param name="request">The request.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         [HttpPost("download")]
         public async Task<IActionResult> DownloadFileAsync(DownloadFileRequest request)
         {
@@ -63,6 +74,11 @@ namespace GraphAPITestTask.Controllers
         }
 
 
+        /// <summary>Uploads the file asyng.</summary>
+        /// <param name="request">The request.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         [HttpPost("upload")]
         public async Task<IActionResult> UploadFileAsyng(UploadFileRequest request)
         {

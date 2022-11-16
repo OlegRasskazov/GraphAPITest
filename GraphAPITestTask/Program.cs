@@ -21,11 +21,9 @@ namespace GraphAPITestTask
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-
             builder.Services.AddDbContext<ApplicationContext>(opt => opt.UseInMemoryDatabase("DB"));
 
             builder.Services.AddGraphAPIServce(builder.Configuration);
-
 
             var app = builder.Build();
 
@@ -39,7 +37,6 @@ namespace GraphAPITestTask
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
